@@ -1,6 +1,6 @@
-# Mini JavaScript Projects
+# Mini Frontend Projects
 
-This repository contains a collection of **small JavaScript projects** built daily to improve practical skills.  
+This repository contains a collection of **small Frontend projects** built daily to improve practical skills.  
 I will be adding **one real project every day** — each with clean code, clear concepts, and a short README explaining what I learned.
 
 ---
@@ -14,4 +14,4 @@ Every project in this repo is:
 ✅ Focused on fundamental concepts  
 ✅ Well-documented  
 
-These are not copy-paste tutorials — they are real experiments to learn and practice JavaScript.
+These are not copy-paste tutorials — they are real experiments to learn and practice HTML, CSS and JavaScript.
