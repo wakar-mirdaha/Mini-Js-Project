@@ -18,7 +18,7 @@ const createColorCard = () => {
     card.classList.add('color-card');
     
     card.innerHTML = `
-        <div class="color-swatch" style="background: ${color}"></div>
+        <div class="color-box" style="background: ${color}"></div>
         <span class="color-code">${color}</span>
     `;
 
@@ -41,7 +41,7 @@ const showToast = () => {
     setTimeout(() => toast.style.opacity = '0', 2000);
 };
 
-// Listeners
+
 generateBtn.addEventListener('click', () => {
     colorGrid.innerHTML = '';
     renderPalette();
@@ -49,5 +49,5 @@ generateBtn.addEventListener('click', () => {
 
 loadMoreBtn.addEventListener('click', () => renderPalette(5));
 
-// Initial Load
+
 renderPalette();

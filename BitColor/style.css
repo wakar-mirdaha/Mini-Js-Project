@@ -7,12 +7,10 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* ===== Body ===== */
+
 body {
     font-family: 'Poppins', system-ui, sans-serif;
     background: var(--bg-gradient);
-    background-size: 300% 300%;
-    animation: gradientMove 12s ease infinite;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -21,14 +19,8 @@ body {
     min-height: 100vh;
 }
 
-/* Animated Gradient */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
 
-/* ===== Grid ===== */
+
 .color-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -38,7 +30,7 @@ body {
     margin: 2rem 0;
 }
 
-/* ===== Glass Card ===== */
+
 .color-card {
     background: var(--secondary);
     backdrop-filter: blur(12px);
@@ -56,57 +48,58 @@ body {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Color Swatch ===== */
-.color-swatch {
+
+.color-box {
     height: 120px;
     border-radius: 12px;
     margin-bottom: 10px;
 }
 
-/* ===== Code Text ===== */
+
 .color-code {
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
-    font-family: monospace;
+    font-family: monospace; 
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
-/* ===== Controls ===== */
-.controls {
+
+.btn-container {
     display: flex;
     gap: 1rem;
 }
 
-/* ===== Buttons ===== */
 button {
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 550;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.btn-primary {
+.generateBtn {
     background: rgba(0, 140, 255, 0.7);
     color: var(--text-color);
     border: 1px solid var(--glass-border);
 }
-.btn-primary:hover{
+.generateBtn:hover{
      background: rgba(0, 140, 255, 0.9);
 }
 
-.btn-secondary {
+.loadMoreBtn {
     background: rgba(255,255,255,0.08);
     color: var(--text-color);
     border: 1px solid var(--glass-border);
 }
 
-.btn-secondary:hover {
+.loadMoreBtn:hover {
     background: rgba(255,255,255,0.15);
 }
 
-/* ===== Toast ===== */
+
 .toast {
     position: fixed;
     bottom: 20px;
@@ -118,14 +111,14 @@ button {
     transition: opacity 0.3s;
 }
 
-/* ===== Hero Section ===== */
+
 .hero-section {
     text-align: center;
     margin-bottom: 3rem;
-    animation: fadeIn 1.2s ease-out forwards;
+    /* animation: fadeIn 1.2s ease-out forwards; */
 }
 
-.main-title {
+.heading {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
@@ -135,7 +128,7 @@ button {
     -webkit-text-fill-color: transparent;
 }
 
-.sub-title {
+.sub-heading {
     font-size: 1.1rem;
     color: #cbd5e1;
     font-weight: 400;
@@ -143,8 +136,8 @@ button {
     text-transform: uppercase;
 }
 
-/* ===== Fade Animation ===== */
-@keyframes fadeIn {
+
+/* @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -153,10 +146,10 @@ button {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
-/* ===== Responsive ===== */
+/* 
 @media (max-width: 600px) {
     .main-title { font-size: 2.5rem; }
     .sub-title { font-size: 0.9rem; }
-}
+} */
