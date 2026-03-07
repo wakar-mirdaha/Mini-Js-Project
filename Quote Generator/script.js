@@ -1,24 +1,40 @@
-const generatebtnEl = document.getElementById('generatebtn');
 const quoteEl = document.getElementById('quote');
 const authorEl = document.getElementById('author');
-const categoryEl = document.getElementById('category');
+const btn = document.getElementById('generatebtn');
+const apiKey = "xRSVUz1pvwhLP7KuHVB4sqeVfbBTMDB3NNuSBDSo";
 
-generatebtnEl.addEventListener('click',()=>{
-    quoteEl.innerHTML = "Generating Quote........"
-    GenerateQuote();
-    authorEl.innerHTML = "";
-    categoryEl.innerHTML = "";
+async function getQuote() {
+    try {
 
-});
+        btn.innerText = "Loading...";
+        btn.disabled = true;
+        quoteEl.style.opacity = 0.4; 
 
-async function GenerateQuote() {
-    const response = await fetch("https://api.api-ninjas.com/v1/quotes?X-Api-Key=xRSVUz1pvwhLP7KuHVB4sqeVfbBTMDB3NNuSBDSo");
+        const response = await fetch("https://api.api-ninjas.com/v1/quotes", {
+            headers: { "X-Api-Key": apiKey }
+        });
 
-    if(!response.ok){
-        throw new Error("Response Error :", response.status)
+        if (!response.ok) throw new Error("Network response was not ok");
+
+        const data = await response.json();
+        const { quote, author, category } = data[0];
+
+        
+        quoteEl.innerText = quote;
+        authorEl.innerText = author;
+        document.getElementById('category').innerText = category;
+        
+       
+        quoteEl.style.opacity = 1;
+
+    } catch (error) {
+        quoteEl.innerText = "Error: Could not fetch quote. Please check your connection.";
+        console.error(error);
+    } finally {
+        btn.innerText = "Generate Quote";
+        btn.disabled = false;
     }
-    const data = await response.json();
-        quoteEl.innerHTML = data[0].quote;
-        authorEl.innerHTML = `Author: ${data[0].author}`;
-        categoryEl.innerHTML = `Category: ${data[0].category}`;
 }
+
+btn.addEventListener('click', getQuote);
+getQuote(); 
